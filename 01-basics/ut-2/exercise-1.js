@@ -22,7 +22,7 @@ const fontSize1 = 18;
 const fontSize2 = 16;
 
 
-//salidas de la consola
+//salidas en la consola
 console.log(`%c${text1}`, `font-size: ${fontSize1}px; font-weight: bold; color: blue`);
 console.log(`%c${text2}`, `font-size: ${fontSize2}px; color: green`);
 console.warn(`%c${text3}`, `font-size: ${fontSize2}px`);
