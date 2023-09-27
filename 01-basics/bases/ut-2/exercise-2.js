@@ -1,3 +1,3 @@
-let mensaje = "es un mensaje";
+let mensaje = "This is an alert message, click me to move on";
 
-alert();
+alert(mensaje);
