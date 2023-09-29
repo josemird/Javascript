@@ -3,12 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+
   "scripts": {
     "test": "jest --verbose",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    
+    "test_array": "jest --verbose arrays.test.js",
+    "test_switch": "jest --verbose switch-case.test.js" 
+
   },
+
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.22.5",
     "jest": "^29.7.0"
   }
 }
+
