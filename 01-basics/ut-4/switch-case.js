@@ -83,15 +83,15 @@ const DEFAULT_OPERARTOR_ERROR = "Operator invalid";
  */
 export const simpleCalculatorSC = (operartor, num_1, num_2) => {};
 
-switch (operador) {
-    case 1:
-        return("*");
-    case 2:
-        return("/");
-    case 3:
-        return("+");
-    case 4: 
-        return ("-");
+switch (operator) {
+    case "*":
+        return(num_1 * num_2);
+    case "/":
+        return(num_1 / num_2);
+    case "+":
+        return(num_1 + num_2);
+    case "-": 
+        return (num_1 - num_2);
     default:
         return DEFAULT_OPERARTOR_ERROR;
 }
