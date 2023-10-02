@@ -10,7 +10,8 @@
     
     "test_array": "jest --verbose arrays.test.js",
     "test_switch": "jest --verbose switch-case.test.js",
-    "test_literals": "jest --verbose literals-objects.test.js" 
+    "test_literals": "jest --verbose literals-objects.test.js",
+    "test_loops": "jest --verbose loops.test.js"  
 
   },
 

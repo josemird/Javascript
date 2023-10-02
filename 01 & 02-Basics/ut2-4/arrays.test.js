@@ -1,4 +1,4 @@
-import * as arrays from "./arrays";
+import * as arrays from "./arrays.js";
 
 describe("Basics array methos", () => {
   it("should removes first element from array", () => {
