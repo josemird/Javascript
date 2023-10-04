@@ -23,32 +23,47 @@ export const getNameWithFor = () => {
  ** otro array de los nombres
  ** Usando el bucle DO WHILE
  **/
-export const getNameWithDoWhile = () => {};
+export const getNameWithDoWhile = () => {
+
+
+};
 
 /*
  ** Usando el array persons crea una función que devuelva
  ** otro array de los nombres
  ** Usando el bucle WHILE
  **/
-export const getNameWithWhile = () => {};
+export const getNameWithWhile = () => {
+
+
+};
 
 /*
  ** Usando el array persons crea una función que devuelva
  ** otro array de las edades
  ** Usando el bucle FOR
  **/
-export const getAgeWithFor = () => {};
+export const getAgeWithFor = () => {
+
+
+};
 
 /*
  ** Usando el array persons crea una función que devuelva
  ** otro array de las edades
  ** Usando el bucle DO WHILE
  **/
-export const getAgeWithDoWhile = () => {};
+export const getAgeWithDoWhile = () => {
+
+
+};
 
 /*
  ** Usando el array persons crea una función que devuelva
  ** otro array de las edades
  ** Usando el bucle WHILE
  **/
-export const getAgeWithWhile = () => {};
+export const getAgeWithWhile = () => {
+
+  
+};
