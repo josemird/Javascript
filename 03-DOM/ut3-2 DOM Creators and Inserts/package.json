@@ -1,0 +1,12 @@
+{
+  "name": "ut3-2-dom-creators-and-inserts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "compilar": "tsc --watch",
+    "ejecutar": "nodemon ./js/index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
