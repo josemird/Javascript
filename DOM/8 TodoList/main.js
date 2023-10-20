@@ -1,8 +1,10 @@
-const input = document.querySelector("input");
-const log = document.getElementsByClassName(".search");
+const input = document.querySelector("#add");
+const ul = document.querySelector("#tareas");
 
-input.addEventListener("input", updateValue);
+function showContent(){
+ul = input.textContent;
 
-function updateValue(e) {
-  log.textContent = e.srcElement.value;
 }
+input.addEventListener("click", showContent);
+
+
