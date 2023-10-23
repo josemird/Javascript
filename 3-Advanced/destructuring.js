@@ -5,7 +5,11 @@ const student = ["David", ["HTML", "CSS", "JS", "React"], [98, 85, 90, 95]];
  * debes devolver todas las tecnologías
  * @returns
  */
-export const getAllTechnologies = () => {};
+export const getAllTechnologies = () => {
+  let tecnologies = ["HTML", "CSS", "JS", "REACT"];
+  let [html, css, js, react] = tecnologies;
+  returns(html, css, js, react);
+};
 
 /**
  * Usando Destructuración de arrays,
