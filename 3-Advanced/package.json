@@ -1,0 +1,19 @@
+{
+  "name": "3-advanced",
+  "private": "false",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "destructuring.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:watch": "jest --watch",
+    "test_destructuring": "jest --verbose destructuring.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "jest": "^29.7.0"
+  }
+}
