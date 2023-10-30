@@ -6,9 +6,8 @@ const student = ["David", ["HTML", "CSS", "JS", "React"], [98, 85, 90, 95]];
  * @returns
  */
 export const getAllTechnologies = () => {
-  let tecnologies = ["HTML", "CSS", "JS", "REACT"];
-  let [html, css, js, react] = tecnologies;
-  returns(html, css, js, react);
+  let [,tecnologias] = student;
+  return tecnologias;
 };
 
 /**
