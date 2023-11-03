@@ -1,4 +1,4 @@
-class products{
+export class products{
    title;
    thumbnail;
    url;

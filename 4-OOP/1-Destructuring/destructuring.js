@@ -6,7 +6,7 @@ const student = ["David", ["HTML", "CSS", "JS", "React"], [98, 85, 90, 95]];
  * @returns
  */
 export const getAllTechnologies = () => {
-  let [,tecnologias] = student;
+  let [ , tecnologias] = student;
   return tecnologias;
 };
 
@@ -15,21 +15,31 @@ export const getAllTechnologies = () => {
  * debes devolver todos los valores
  * @returns
  */
-export const getAllValues = () => {};
+export const getAllValues = () => {
+  const [ , , numeros] = student;
+  return numeros;
+};
 
 /**
  * Usando Destructuración de arrays,
  * debes devolver solo React
  * @returns
  */
-export const getReact = () => {};
+export const getReact = () => {
+  let [ , tecnologias] = student;
+  return tecnologias[3];
+};
 
 /**
  * Usando Destructuración de arrays,
  * debes devolver CSS y 85
  * @returns
  */
-export const getCSSAnd85 = () => {};
+export const getCSSAnd85 = () => {
+  let [ , tecnologias, numeros] = student;
+  return [tecnologias[1], numeros[1]];
+
+};
 
 /*****************************************************
  * ***************************************************
@@ -62,18 +72,27 @@ const books = [
  * debes devolver el título del primer libro
  * @returns
  */
-export const getTitleFirstBook = () => {};
+export const getTitleFirstBook = () => {
+  let [{title}] = books;
+  return title;   
+};
 
 /**
  * Usando Destructuración de arrays y objetos,
  * debes devolver el año de publicación del segundo libro
  * @returns
  */
-export const getPublishedSecondBook = () => {};
+export const getPublishedSecondBook = () => {
+  let [, {published}] = books;
+  return published;  
+};
 
 /**
  * Usando Destructuración de arrays y objetos,
  * debes devolver el título y el autor del último libro
  * @returns
  */
-export const getAuthorsAndTitleLastBook = () => {};
+export const getAuthorsAndTitleLastBook = () => {
+  let [, , , {title, author}] = books;
+  return [title, author];
+};

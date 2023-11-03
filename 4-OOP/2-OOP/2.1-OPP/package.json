@@ -1,0 +1,17 @@
+{
+  "name": "2.1-opp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "books.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:watch": "jest --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babelrc": "^0.0.7",
+    "jest": "^29.7.0"
+  }
+}

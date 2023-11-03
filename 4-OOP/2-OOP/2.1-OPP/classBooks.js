@@ -1,4 +1,6 @@
-export class Books{
+
+
+class Books{
     #title;
     #author;
     published;
@@ -9,38 +11,22 @@ export class Books{
         this.published = published;
     }
 
-// MAKING 'TITLE AND AUTHOR' A PUBLIC ATTRIBUTE
+// GETTER SETTER 'TITLE & AUTHOR'
     get title(){
         return this.#title
+    }
+    set Title(newTitle) {
+        this.#title = newTitle;
     }
 
     get author(){
         return this.#author
     }
-
-//GETTER & SETTER 'TITLE'
-    getTitle(){
-        return this.#title;
+    set Author(newAuthor) {
+        this.#author = newAuthor;
     }
-    setTitle(newTitle) {
-        this.title = newTitle;
-    }
-
-//GETTER & SETTER 'AUTHOR'
-    getAuthor(){
-        return this.author;
-    }
-    setAuthor(newAuthor) {
-        this.author = newAuthor;
-    }
-
-//GETTER & SETTER 'PUBLISHED'
-    getPublished() {
-        return this.published;
-      }
-    setPublished(newPublished) {
-        this.published = newPublished;
-      }
-    
 }
-
+    const book = new Books("");
+    console.log(book.title);
+    console.log(book.author);
+    console.log(book.published);

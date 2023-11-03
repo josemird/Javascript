@@ -6,3 +6,4 @@ class price{
         this.current_price = current_price;
     }
 }
+

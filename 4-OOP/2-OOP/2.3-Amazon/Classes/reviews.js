@@ -1,4 +1,4 @@
-class reviews{
+export class reviews{
     rating;
     total_reviews;
     constructor(rating, total_reviews){
