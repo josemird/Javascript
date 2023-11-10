@@ -1,4 +1,4 @@
-class price{
+export class Price{
     currency;
     current_price;
     constructor(currency, current_price){
