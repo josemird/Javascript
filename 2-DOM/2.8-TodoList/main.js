@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function addItemsToList(itemText) {
     const newItem = document.createElement("li");
-
     newItem.innerHTML = `<p>${itemText}</p><button class="btn-delete">x</button>`;
 
     newItem.querySelector(".btn-delete").addEventListener("click", function () {
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
       updateCounter();
       saveItemsLocal();
     });
-
     list.appendChild(newItem);
 
     list.style.display = "block";
