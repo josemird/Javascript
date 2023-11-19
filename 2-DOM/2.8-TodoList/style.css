@@ -9,6 +9,7 @@ body {
 }
 
 h1 {
+
   text-align: center;
   color: darkslategrey;
 }
@@ -21,6 +22,7 @@ h1 {
   margin-right: auto;
   background-color: white;
   padding: 30px;
+  border-radius: 15px;
 }
 
 .search {
