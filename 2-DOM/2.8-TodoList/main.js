@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const addBtn = document.querySelector(".search .btn-add");
   const list = document.querySelector(".li-container ul");
   const empty = document.querySelector(".empty");
-  const counter = document.querySelector(".item-count");
+  const counter = document.querySelector(".task-count");
 
   function updateCounter() {
     const itemCount = list.children.length;
