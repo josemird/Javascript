@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
       input.value = "";
     }
   });
-
   loadItemsLocal();
 
 });
