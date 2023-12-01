@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div{
+    gap: 10px;
+}
+p{
+    border: solid 1px black;    
+    border-radius: 10px;
+    padding: 5px;
+}
+h1{
+    text-align: center;
+}

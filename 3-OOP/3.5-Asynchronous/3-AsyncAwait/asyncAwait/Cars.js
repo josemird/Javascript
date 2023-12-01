@@ -11,4 +11,6 @@ export class Cars{
         this.model = model;
         this.type = type;
     }
+
+    
 }

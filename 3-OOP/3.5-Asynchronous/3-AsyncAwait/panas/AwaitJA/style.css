@@ -1,0 +1,15 @@
+#container div,p{
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+#container div{
+    display: inline-block;
+    margin: 5px;
+
+}
+
+p{
+    margin: 5px;
+    text-align: center;
+}
