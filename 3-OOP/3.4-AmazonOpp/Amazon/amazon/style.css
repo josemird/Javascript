@@ -1,29 +1,12 @@
-/* Estilo para el contenedor principal */
 #container {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-/* Estilo para los párrafos dentro del contenedor */
-#container p {
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-/* Estilo para la imagen del producto */
-#container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-/* Estilo para resaltar el precio */
-#container p.price {
-  font-weight: bold;
-  color: #007bff; /* Color azul brillante, puedes cambiarlo según tus preferencias */
+#container > div{
+  background-color:  lightgrey;
+  margin-bottom: 12px;
+  padding: 5px;
+  border: 1px solid silver;
+  border-radius: 10px;
 }

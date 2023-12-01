@@ -16,20 +16,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const container = document.getElementById('container');
 
   if (container) {
-    // Muestro los Elementos en Párrafos
-    const priceElement = document.createElement('p');
-    priceElement.textContent = `Price: ${price.current_price} ${price.currency}`;
-
-    const productElement = document.createElement('p');
-    productElement.textContent = `Product: ${product.title}`;
-
-    const reviewElement = document.createElement('p');
-    reviewElement.textContent = `Review: ${review.rating} (${review.total_reviews} reviews)`;
-
-    // Agregar los elementos al Div
+    // Muestro los elementos en Párrafos
+  
+    const title = document.createElement('div');
+    title.textContent = `nameProduct= ${product.title}\n`;
+    container.appendChild(title);
+  
+    const url = document.createElement('div');
+    url.textContent = `urlProduct= ${product.url}\n`;
+    container.appendChild(url);
+  
+    const thumbnail = document.createElement('div');
+    thumbnail.textContent = `urlImage= ${product.thumbnail}\n`;
+    container.appendChild(thumbnail);
+  
+    const priceElement = document.createElement('div');
+    priceElement.textContent = `score= ${price.current_price}\n`;
     container.appendChild(priceElement);
-    container.appendChild(productElement);
+  
+    const currency = document.createElement('div');
+    currency.textContent = `price= ${price.currency}\n`;
+    container.appendChild(currency);
+  
+    const rating = document.createElement('div');
+    rating.textContent = `rating= ${review.rating}\n`;
+    container.appendChild(rating);
+  
+    const reviewElement = document.createElement('div');
+    reviewElement.textContent = `totalReviews= ${review.total_reviews}\n`;
     container.appendChild(reviewElement);
+    
   } else {
     console.error('El elemento con ID "container" no se encontró en el DOM.');
   }
