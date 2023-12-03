@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     container.appendChild(priceElement);
   
     const currency = document.createElement('div');
-    currency.textContent = `price= ${price.currency}\n`;
+    currency.textContent = `Price= ${price.current_price} ${price.currency}\n`;
     container.appendChild(currency);
   
     const rating = document.createElement('div');
