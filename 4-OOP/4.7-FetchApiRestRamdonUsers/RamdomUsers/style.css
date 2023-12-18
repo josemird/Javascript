@@ -1,0 +1,92 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+}
+
+body{
+  background-color:  #d2e0fb ;
+}
+
+h1{
+  background-color: #8eaccd;
+  color: #f6f1ee;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+background-color: lightsalmon;
+display: flex;
+align-items: center;
+flex-direction: column;
+margin: 70px 500px 40px;
+padding: 20px;
+border-radius: 15px;
+}
+
+.card{
+  margin: 15px;
+}
+
+img{
+  border-radius: 100px;
+  margin-bottom: 20px;
+  align-self: center;
+  width: 125px;
+  height: 125px;
+}
+
+
+div.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+span:first-of-type{
+  margin-top: 20px;
+}
+
+span{
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+
+button{
+  color:  #f6f1ee;
+  background-color:#8eaccd;
+  border-radius: 10px;
+  border: white 2px solid;
+  width: 170px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: #a6bce5;
+}
+
+button:active{
+  background-color: #8eaccd;
+  transform: scale(0.9);
+} 
