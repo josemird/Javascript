@@ -10,7 +10,15 @@ inputTag.appendChild(dataListTag);
 inputTag.addEventListener("keyup", async () => {
     const response = await fetch(url_api_marvel_startNameWith + inputTag.value);
     const data = await response.json();
-    console.log(data);
+    
+    const result = data.data.results;
+    result.forEach((characters) => {
+        const optionTag = document.createElement("option");
+        optionTag.setAttribute("value", characters.name);
+        dataListTag.appendChild(optionTag);
+    });
+
+    //console.log(data.data.results);
 });
 
 
