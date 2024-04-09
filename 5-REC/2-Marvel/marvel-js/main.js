@@ -17,8 +17,6 @@ inputTag.addEventListener("keyup", async () => {
         optionTag.setAttribute("value", characters.name);
         dataListTag.appendChild(optionTag);
     });
-
-    //console.log(data.data.results);
 });
 
 
