@@ -1,3 +1,4 @@
+//https://rapidapi.com/truongvuhung102/api/chatgpt-best-price/
 export const urlApiChat = 'https://chatgpt-best-price.p.rapidapi.com/v1/chat/completions';
 
 export let getOptions = (textPrompt) => {
@@ -12,7 +13,7 @@ export let getOptions = (textPrompt) => {
             model: 'gpt-3.5-turbo',
             messages: [
                 {
-                    role: 'user',
+                    role: 'user',S
                     content: textPrompt,
                 }
             ]

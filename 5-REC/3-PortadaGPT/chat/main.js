@@ -23,9 +23,12 @@ const createResponseElement = () => {
 
   //todo: añadir los botones de bootstrap aqui
   //Iconos Bootstrap
-  let icon = document.createElement('i')
+  let icon = document.createElement('i');
+    //https://icons.getbootstrap.com/icons/terminal/
   let iconPlus = document.createElement('i');
-  let iconLess = document.createElement('i')
+    //https://icons.getbootstrap.com/icons/terminal-plus/
+  let iconLess = document.createElement('i');
+    //https://icons.getbootstrap.com/icons/terminal-dash/
 
   textResponse.appendChild(icon);
   textResponse.appendChild(iconPlus);
