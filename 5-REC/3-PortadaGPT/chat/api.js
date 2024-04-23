@@ -13,7 +13,7 @@ export let getOptions = (textPrompt) => {
             model: 'gpt-3.5-turbo',
             messages: [
                 {
-                    role: 'user',S
+                    role: 'user',
                     content: textPrompt,
                 }
             ]
