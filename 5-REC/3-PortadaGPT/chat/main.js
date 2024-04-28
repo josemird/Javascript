@@ -4,7 +4,7 @@ import './style.css'
 const buttonGenerator =  document.querySelector('button')
 const chatgptContainer = document.querySelector('.chatgpt-container');
 const textQuestion = document.querySelector('textarea')
-  buttonGenerator.disabled = true; //propiedad disables activada por defecto
+  buttonGenerator.disabled = true; //disable property: active by default
   buttonGenerator.className = 'button-generator'
 
 
@@ -15,29 +15,23 @@ const createResponseElement = () => {
 
   chatgptContainer.appendChild(responseContainer);
 
-  const textResponse = document.createElement('textarea'); //texto respuesta
+  const textResponse = document.createElement('textarea'); //response text
     textResponse.setAttribute('placeholder','Response');
     textResponse.setAttribute('rows', 5);
 
   responseContainer.appendChild(textResponse);
 
-
-  //todo: añadir los iconos de bootstrap aqui
-  //Iconos Bootstrap
+  //BOOTSTRAP'S ICONS
   const iconsContainer = document.createElement('div');
   iconsContainer.className = 'icons-container';
   responseContainer.appendChild(iconsContainer);
 
   const icon = document.createElement('i');
   icon.className = "bi bi-terminal i-clear";
-
   const iconPlus = document.createElement('i');
   iconPlus.className = "bi bi-terminal-plus i-add";
-    //https://icons.getbootstrap.com/icons/terminal-plus/
-
   const iconDash = document.createElement('i');
   iconDash.className = "bi bi-terminal-dash i-delete";
-    //https://icons.getbootstrap.com/icons/terminal-dash/
 
   iconsContainer.appendChild(icon);
   iconsContainer.appendChild(iconPlus);
@@ -53,7 +47,7 @@ textQuestion.addEventListener('input', () => {
     : (buttonGenerator.disabled = false);
 })
 
-//DATOS API PROMPT
+//API PROMPT DATA
 buttonGenerator.addEventListener('click', async() => {
   const response = await fetch(urlApiChat, getOptions(textQuestion.value));
   const data = await response.json();
