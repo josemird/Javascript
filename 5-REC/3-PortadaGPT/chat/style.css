@@ -11,6 +11,8 @@ h1 {
   margin-bottom: 20px;
   font-style: italic;
   color: #666;
+
+  text-shadow: #333 1px 1px 15px;
 }
 
 body {
@@ -19,6 +21,8 @@ body {
   justify-content: start;
   align-items: center;
   flex-direction: column;
+
+  padding-top: 5%;
 }
 
 textarea {
@@ -45,6 +49,8 @@ button {
   cursor: pointer;
   font-size: 1.2rem;
   font-family: "system-ui";
+
+  margin-top: 10px;
 }
 
 button:hover {
@@ -56,17 +62,24 @@ button:active {
 }
 
 button:disabled {
-  background-color: red;
+  background-color: rgb(125, 38, 35);
+  color: gray;
   cursor: not-allowed;
 }
 
 i {
-  color: #fff;
+  /*color: #fff;*/
+  color: gainsboro;
   cursor: pointer;
+  scale: 0.9;
+  margin-left: 5px;
+
+ 
 }
 
 i:hover {
-  color: #666;
+  /*color: #666;*/ 
+  color: #e2bc3e;
 }
 
 i:active {
@@ -93,6 +106,7 @@ i:active {
 .response-container {
   width: 100%;
   display: flex;
+
   gap: 10px;
 }
 
@@ -100,4 +114,7 @@ i:active {
   display: flex;
   flex-direction: column;
   justify-content: end;
+
+  gap: 5px;
+  padding-bottom: 10px;
 }

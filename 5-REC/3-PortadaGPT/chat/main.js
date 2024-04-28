@@ -21,18 +21,27 @@ const createResponseElement = () => {
 
   responseContainer.appendChild(textResponse);
 
-  //todo: añadir los botones de bootstrap aqui
+
+  //todo: añadir los iconos de bootstrap aqui
   //Iconos Bootstrap
-  let icon = document.createElement('i');
-    //https://icons.getbootstrap.com/icons/terminal/
-  let iconPlus = document.createElement('i');
+  const iconsContainer = document.createElement('div');
+  iconsContainer.className = 'icons-container';
+  responseContainer.appendChild(iconsContainer);
+
+  const icon = document.createElement('i');
+  icon.className = "bi bi-terminal i-clear";
+
+  const iconPlus = document.createElement('i');
+  iconPlus.className = "bi bi-terminal-plus i-add";
     //https://icons.getbootstrap.com/icons/terminal-plus/
-  let iconLess = document.createElement('i');
+
+  const iconDash = document.createElement('i');
+  iconDash.className = "bi bi-terminal-dash i-delete";
     //https://icons.getbootstrap.com/icons/terminal-dash/
 
-  textResponse.appendChild(icon);
-  textResponse.appendChild(iconPlus);
-  textResponse.appendChild(iconLess);
+  iconsContainer.appendChild(icon);
+  iconsContainer.appendChild(iconPlus);
+  iconsContainer.appendChild(iconDash);
 };
 createResponseElement();
 
