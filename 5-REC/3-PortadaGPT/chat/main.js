@@ -23,7 +23,7 @@ const createResponseElement = () => {
 
   responseContainer.appendChild(textResponse);
 
-  //*BOOTSTRAP'S ICONS
+  //BOOTSTRAP'S ICONS
   const iconsContainer = document.createElement('div');
   iconsContainer.className = 'icons-container';
   responseContainer.appendChild(iconsContainer);
@@ -38,8 +38,22 @@ const createResponseElement = () => {
   iconsContainer.appendChild(icon);
   iconsContainer.appendChild(iconPlus);
   iconsContainer.appendChild(iconDash);
+
+  //BOOTSTRAP'S ICONS EVENTS
+  icon.addEventListener('click', () => {
+    textQuestion.value = '';
+    textResponse.value = '';
+  });
+  iconPlus.addEventListener('click', () => {
+    createResponseElement();
+  });
+  iconDash.addEventListener('click', () => {
+    const responseContainer = document.querySelector('.response-container');
+    responseContainer.remove();
+  });
 };
 createResponseElement();
+
 
 
 //*BUTTON ACTIVE EVENT
