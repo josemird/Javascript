@@ -55,7 +55,6 @@ const createResponseElement = () => {
 createResponseElement();
 
 
-
 //*BUTTON ACTIVE EVENT
 textQuestion.addEventListener('input', () => {
   (textQuestion.value === "" || textQuestion.value.trim().length === 0)
@@ -68,7 +67,7 @@ buttonGenerator.addEventListener('click', async() => {
   const response = await fetch(urlApiChat, getOptions(textQuestion.value));
   const data = await response.json();
   const dataResult = data.choices[0].message.content;
-  //console.log(dataResult);
+    console.log(dataResult);
   const textResponse = document.querySelector('.text-response');
   textResponse.value = ''
   //textResponse.value = dataResult; // without animation typing effect
