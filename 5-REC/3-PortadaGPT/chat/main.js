@@ -9,6 +9,40 @@ const buttonGenerator =  document.querySelector('button')
   buttonGenerator.className = 'button-generator'
 
 
+//*BOOTSTRAP'S ICONS CREATION
+const createIconContainer = (textResponse) => {
+  const iconsContainer = document.createElement('div');
+  iconsContainer.className = 'icons-container';
+
+  const icon = document.createElement('i');
+    icon.className = "bi bi-terminal i-clear";
+  const iconPlus = document.createElement('i');
+    iconPlus.className = "bi bi-terminal-plus i-add";
+  const iconDash = document.createElement('i');
+    iconDash.className = "bi bi-terminal-dash i-delete";
+
+  iconsContainer.appendChild(icon);
+  iconsContainer.appendChild(iconPlus);
+  iconsContainer.appendChild(iconDash);
+
+  //BOOTSTRAP'S ICONS EVENTS
+  icon.addEventListener('click', () => {
+    textQuestion.value = '';
+    textResponse.value = '';
+    buttonGenerator.disabled = true; //disable property: active by default
+  });
+  iconPlus.addEventListener('click', () => {
+    createResponseElement();
+  });
+  iconDash.addEventListener('click', () => {
+    const responseContainer = document.querySelector('.response-container');
+    responseContainer.remove();
+  });
+
+  return iconsContainer; //returs whole container
+}
+
+
 //*RESPONSE ELEMENT CREATION
 const createResponseElement = () => {
   const responseContainer = document.createElement('div');
@@ -23,34 +57,8 @@ const createResponseElement = () => {
 
   responseContainer.appendChild(textResponse);
 
-  //BOOTSTRAP'S ICONS
-  const iconsContainer = document.createElement('div');
-  iconsContainer.className = 'icons-container';
-  responseContainer.appendChild(iconsContainer);
-
-  const icon = document.createElement('i');
-  icon.className = "bi bi-terminal i-clear";
-  const iconPlus = document.createElement('i');
-  iconPlus.className = "bi bi-terminal-plus i-add";
-  const iconDash = document.createElement('i');
-  iconDash.className = "bi bi-terminal-dash i-delete";
-
-  iconsContainer.appendChild(icon);
-  iconsContainer.appendChild(iconPlus);
-  iconsContainer.appendChild(iconDash);
-
-  //BOOTSTRAP'S ICONS EVENTS
-  icon.addEventListener('click', () => {
-    textQuestion.value = '';
-    textResponse.value = '';
-  });
-  iconPlus.addEventListener('click', () => {
-    createResponseElement();
-  });
-  iconDash.addEventListener('click', () => {
-    const responseContainer = document.querySelector('.response-container');
-    responseContainer.remove();
-  });
+  //BOOTSTRAP'S ICONS EXECUTION
+  responseContainer.appendChild(createIconContainer(textResponse)); //exec. function creating icons container and functionalities
 };
 createResponseElement();
 
