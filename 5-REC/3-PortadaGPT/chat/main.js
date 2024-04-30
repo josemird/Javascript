@@ -79,7 +79,12 @@ buttonGenerator.addEventListener('click', async() => {
   const data = await response.json();
   const dataResult = data.choices[0].message.content;
     console.log(dataResult);
+    
   const textResponse = document.querySelector('.text-response');
+  const responseContainerAll = document.querySelectorAll('.responde-container textarea');
+  //todo: hacer un find que use "responseContainerAll" para mostrar la salida del que este vacio, aqui cambiamos response por este valor.value),
+  //todo: si todos estan llenos debe aparecer un alert que lo diga y no realice la consulta
+  
   textResponse.value = ''
   //textResponse.value = dataResult; // without animation typing effect
   let letters = 0  
