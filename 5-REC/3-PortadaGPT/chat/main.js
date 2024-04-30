@@ -1,13 +1,14 @@
-import { urlApiChat, getOptions} from './api';
 import './style.css'
+import { urlApiChat, getOptions} from './api';
+
 
 const chatgptContainer = document.querySelector('.chatgpt-container');
 const textQuestion = document.querySelector('textarea')
   textQuestion.className = 'text-question';
 const buttonGenerator =  document.querySelector('button')
+buttonGenerator.className = 'button-generator'
   buttonGenerator.disabled = true; //disable property: active by default
-  buttonGenerator.className = 'button-generator'
-
+  
 
 //*BOOTSTRAP'S ICONS CREATION
 const createIconContainer = (textResponse) => {
@@ -29,18 +30,20 @@ const createIconContainer = (textResponse) => {
   icon.addEventListener('click', () => {
     textQuestion.value = '';
     textResponse.value = '';
-    buttonGenerator.disabled = true; //disable property: active by default
+    buttonGenerator.disabled = true;
   });
   iconPlus.addEventListener('click', () => {
     createResponseElement();
   });
   iconDash.addEventListener('click', () => {
-    const responseContainer = document.querySelector('.response-container');
-    responseContainer.remove();
+    let lengthResponseContainer = document.querySelectorAll(".response-container").length;
+    if(lengthResponseContainer > 1) {
+      textResponse.parentElement.remove(); //accesing textarea parent deletes the focusing box
+    }
   });
 
   return iconsContainer; //returs whole container
-}
+};
 
 
 //*RESPONSE ELEMENT CREATION
@@ -68,7 +71,7 @@ textQuestion.addEventListener('input', () => {
   (textQuestion.value === "" || textQuestion.value.trim().length === 0)
     ? (buttonGenerator.disabled = true)
     : (buttonGenerator.disabled = false);
-})
+});
 
 //*API PROMPT DATA EVENT (BUTTON)
 buttonGenerator.addEventListener('click', async() => {
@@ -79,13 +82,12 @@ buttonGenerator.addEventListener('click', async() => {
   const textResponse = document.querySelector('.text-response');
   textResponse.value = ''
   //textResponse.value = dataResult; // without animation typing effect
-  let letters = 0; 
+  let letters = 0  
   const typing = setInterval(() => {
     textResponse.value += dataResult[letters];
     letters++;
     if (letters >= dataResult.length) {clearInterval(typing)}
   }, 33); //* with animation typing effect
-  
 });
 
 

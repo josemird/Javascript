@@ -6,7 +6,7 @@ export let getOptions = (textPrompt) => {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
-            'X-RapidAPI-Key': 'e76c1e965dmsh65c7514abaf1d2bp14f042jsned57669d1b0e',
+            'X-RapidAPI-Key': '8df8d4e282msh07bd4823c13922ep1fe52cjsn5a9bbdcd57ea',
             'X-RapidAPI-Host': 'chatgpt-best-price.p.rapidapi.com'
         },
         body: JSON.stringify({
