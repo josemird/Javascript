@@ -80,19 +80,23 @@ buttonGenerator.addEventListener('click', async() => {
   const dataResult = data.choices[0].message.content;
     console.log(dataResult);
     
-  const textResponse = document.querySelector('.text-response');
-  const responseContainerAll = document.querySelectorAll('.responde-container textarea');
-  //todo: hacer un find que use "responseContainerAll" para mostrar la salida del que este vacio, aqui cambiamos response por este valor.value),
-  //todo: si todos estan llenos debe aparecer un alert que lo diga y no realice la consulta
-  
-  textResponse.value = ''
-  //textResponse.value = dataResult; // without animation typing effect
-  let letters = 0  
-  const typing = setInterval(() => {
-    textResponse.value += dataResult[letters];
-    letters++;
-    if (letters >= dataResult.length) {clearInterval(typing)}
-  }, 33); //* with animation typing effect
+  const responseContainerAll = document.querySelectorAll('.response-container textarea');
+  const responseContainerAllToArray = [...responseContainerAll]; //le convierto en array el nodeList que recupero antes porque find lee arrays
+  const responseContainerFindEmpty = responseContainerAllToArray.find((textarea) => {
+    return textarea.value === ""
+  });
+
+  if (responseContainerFindEmpty === undefined){
+    alert("TAMOS A REVENTA BRO")
+  }else{
+    //responseContainerFindEmpty.value = dataResult; //*without animation typing effect
+    let letters = 0  
+    const typing = setInterval(() => {
+      responseContainerFindEmpty.value += dataResult[letters];
+      letters++;
+      if (letters >= dataResult.length) {clearInterval(typing)}
+    }, 33); //* with animation typing effect
+  }
 });
 
 
