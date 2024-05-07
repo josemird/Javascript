@@ -87,7 +87,7 @@ buttonGenerator.addEventListener('click', async() => {
   });
 
   if (responseContainerFindEmpty === undefined){
-    alert("TAMOS A REVENTA BRO")
+    alert("ESTAMOS COMPLETOS")
   }else{
     //responseContainerFindEmpty.value = dataResult; //*without animation typing effect
     let letters = 0  
