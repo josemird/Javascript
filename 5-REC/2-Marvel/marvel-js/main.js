@@ -24,12 +24,36 @@ inputTag.addEventListener("keyup", async () => {
 
 //coger las cards del personaje en el input al pulsar el boton de submit
 buttonTag.addEventListener("click", async () => {
+    //dejamos la card vacia
+    divCard.innerHTML = "";
+    //coger el primer personaje de la lista de recomendaciones
     const filterCharacter = dataListTag.options[0].id
     const responseCharacter = await fetch(url_marvel_character(filterCharacter));
     const dataCharacter = await responseCharacter.json(); //objeto litera devuelto en json "dataCharacter"
     const classCharacter = await parserToCharacterClass(dataCharacter.data.results[0]);
     console.log(classCharacter);
+
+    //*CREACION DE LA CARD DEL PERSONAJE
+    //IMAGEN
+    const img = document.createElement("img");
+        img.classList.add("container-img");
+        img.src = `${classCharacter.path}.${classCharacter.extension}`;
+    divCard.appendChild(img);
+
+    //NOMBRE
+    const name = document.createElement("h2");
+        name.classList.add("name");
+        name.textContent = `${classCharacter.name}`;
+    divCard.appendChild(name);
+
+    //DESCRIPCION
+    const description = document.createElement("p");
+        description.classList.add("description");
+        description.textContent = `${classCharacter.description}`;
+    divCard.appendChild(description);
 });
+
+
 
 
 
