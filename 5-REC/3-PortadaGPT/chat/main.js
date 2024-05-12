@@ -88,6 +88,7 @@ buttonGenerator.addEventListener('click', async() => {
 
   if (responseContainerFindEmpty === undefined){
     alert("ALL CONTAINERS ARE BUSY")
+    createResponseElement();
   }else{
     //responseContainerFindEmpty.value = dataResult; //*without animation typing effect
     let letters = 0  
