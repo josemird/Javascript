@@ -1,10 +1,10 @@
 import './style.css'
-import CurrencyAPI from '@everapi/currencyapi-js';
+import currencyapi from '@everapi/currencyapi-js';
 import { currenciesSupported } from './mocks/mockCurrenciesSupported';
+import { converterSupported } from './mocks/mockConverterSupported';
 
-const client = new CurrencyAPI('cur_live_zz7lkAzJotNH9cI7Rc6bRBtCE8hrFvJf3caeytWN');
-//const responseCurrenciesSupported = await client.currencies();
-//--------
+
+const client = new currencyapi('cur_live_zz7lkAzJotNH9cI7Rc6bRBtCE8hrFvJf3caeytWN');
 
 //query selectors
 const divContainer = document.querySelector('.container')
@@ -18,9 +18,10 @@ divContainer.appendChild(divSelectContainer);
 divSelectContainer.appendChild(selectTagUp);
 divSelectContainer.appendChild(selectTagDown);
 
-//* CREAR CAMPOS EN LOS SELECT
 const currenciesSupportedResponse = Object.values(currenciesSupported.data) //obtenemos un array de los valores del objeto 'currenciesSupported' -> 'data'
+const converterSupportedResponse = Object.values(converterSupported.data) 
 
+//* CREAR CAMPOS EN LOS SELECT
 currenciesSupportedResponse.forEach((currency)=>{  //iteramos sobre el array de valores para obtener el nombre de cada moneda y crear un option con ese nombre, y lo añadimos al select
     //console.log(currency.name)
     const option = document.createElement('option');
@@ -37,29 +38,42 @@ currenciesSupportedResponse.forEach((currency)=>{  //repetimos el proceso para e
     option.textContent = currency.name;
 });
 
-//* CREAR BOTON Y EVENTO
+//funcion para obtener el codigo de la moneda seleccionada en el select (por su nombre) comparando con el array de monedas soportadas
+const getCurrentCodeByName = (currency) => { 
+    return currenciesSupportedResponse.find((data) => 
+        currency === data.name
+    ).code;
+};
+
+//* CREAR BOTON Y EVENTO CLICK
 const buttonTag = document.createElement('button');
     buttonTag.textContent = 'Dale';
 divContainer.appendChild(buttonTag);
 
-buttonTag.addEventListener('click', () => {
-    console.log(selectTagUp.value);
-    console.log(selectTagDown.value);
+buttonTag.addEventListener('click', async () => {
+    //console.log(selectTagUp.value);
+    //console.log(selectTagDown.value);
     
-    //funcion para obtener el codigo de la moneda seleccionada en el select (por su nombre) comparando con el array de monedas soportadas
-    const getCurrentCodeByName = (currency) => { 
-    return currenciesSupportedResponse.find((data) => {
-        if (currency === data.name){
-            return data.code;
-        }
-    });
-    }
-    getCurrentCodeByName();
-        console.log(getCurrentCodeByName(selectTagUp.value).code);
-        console.log(getCurrentCodeByName(selectTagDown.value).code);
-    
-    //funcion que 
+    const baseCode = getCurrentCodeByName(selectTagUp.value);
+    const targetCode = getCurrentCodeByName(selectTagDown.value);
+    console.log(baseCode);
+    console.log(targetCode);
 
+    const currencyValue = converterSupportedResponse[0].value
+    console.log(currencyValue);
+
+    const spanTag = document.createElement("span");
+    divContainer.appendChild(spanTag);
+    spanTag.textContent = (`Result: 1 ${baseCode} = ${currencyValue.toFixed(2)} ${targetCode}`);
+
+
+
+    
+    // const responseConversion = await client.latest({
+    //     base_currency: baseCode,
+    //     currencies: targetCode
+    // });
+    // console.log(responseConversion);
 
 });
 
