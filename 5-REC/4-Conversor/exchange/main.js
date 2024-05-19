@@ -3,7 +3,6 @@ import currencyapi from '@everapi/currencyapi-js';
 import { currenciesSupported } from './mocks/mockCurrenciesSupported';
 import { converterSupported } from './mocks/mockConverterSupported';
 import { selectUpCreation, selectDownCreation } from './domHelper';
-import { getCurrentCodeByName } from './domHelper';
 
 //
 const client = new currencyapi('cur_live_zz7lkAzJotNH9cI7Rc6bRBtCE8hrFvJf3caeytWN'); //Instancia de la clase currencyapi con la API KEY 
@@ -32,8 +31,14 @@ const converterSupportedResponse = Object.values(converterSupported.data)       
 selectUpCreation();
 selectDownCreation();
 
-//* OBTENER CODIGO MONEDA SELECCIONADA
-getCurrentCodeByName();
+//* FUNCION OBTENER CODIGO MONEDA ESCOGIDA EN EL SELECT (POR NOMBRE) COMPARANDO UN ARRAY DE MONEDAS SOPORTADAS
+export const getCurrentCodeByName = (currency) => { // Función que recibe el nombre de la moneda y retorna el código de la moneda
+    return currenciesSupportedResponse.find(        // Buscamos la moneda en el array de monedas soportadas
+        (data) => currency === data.name            // Comparamos el nombre de la moneda con el nombre de la moneda en el array
+    ).code;                                         // Retornamos el código de la moneda
+};
+
+
 
 //* CREAR BOTON
 const buttonTag = document.createElement('button'); 

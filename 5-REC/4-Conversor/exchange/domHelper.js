@@ -19,12 +19,3 @@ export const selectDownCreation = () => {
         option.textContent = currency.name;
     });
 };
-
-
-//* FUNCION OBTENER CODIGO MONEDA ESCOGIDA EN EL SELECT (POR NOMBRE) COMPARANDO UN ARRAY DE MONEDAS SOPORTADAS
-export const getCurrentCodeByName = (currency) => { // Función que recibe el nombre de la moneda y retorna el código de la moneda
-    return currenciesSupportedResponse.find(        // Buscamos la moneda en el array de monedas soportadas
-        (data) => currency === data.name            // Comparamos el nombre de la moneda con el nombre de la moneda en el array
-    ).code;                                         // Retornamos el código de la moneda
-};
-
