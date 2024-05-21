@@ -79,9 +79,6 @@ const getFlags = (containerFlags, countries) => {  //PROMESA BANDERAS
     })
 };
 
-//* INICIALIZACIÓN INIT
-init();
-
 //*EVENTO CLICK BOTON
 buttonTag.addEventListener('click', async () => {
     //VALOR MONEDA
@@ -93,6 +90,14 @@ buttonTag.addEventListener('click', async () => {
     const targetCode = getCurrentCodeByName(selectTagDown.value); //Obtenemos el código de la moneda target seleccionada en el select
         console.log(baseCode);
         console.log(targetCode);
+
+        //todo: aqui hay que seguir
+        // const responseConversion = await client.latest({
+        //     base_currency: baseCode.code,
+        //     currencies: targetCode.code
+        // });
+        // console.log(responseConversion);
+
 
     //COUNTRIES MONEDAS
     const baseCountries = getCurrentCountriesByName(selectTagUp.value)      //Obtenemos los countries de la moneda base seleccionada en el select
@@ -111,11 +116,10 @@ buttonTag.addEventListener('click', async () => {
     body.appendChild(getFlagsTarget);
 });
 
-// const responseConversion = await client.latest({
-//     base_currency: baseCode,
-//     currencies: targetCode
-// });
-// // console.log(responseConversion);
+//* INICIALIZACIÓN INIT
+init();
+
+
 
 
 
