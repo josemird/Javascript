@@ -11,7 +11,7 @@ body {
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  background-color: rgb(195, 212, 227);
+  background-color: rgb(197, 212, 224);
 }
 h1 {
   color: white;
@@ -66,7 +66,7 @@ span {
   width: auto;
   border-radius: 10px;
   background-color: #006b8b;
-  padding: 1rem;
+  padding: .1rem 1.5rem 1rem;
   margin-bottom: 1.5%;
 }
 
