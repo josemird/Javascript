@@ -1,5 +1,4 @@
 //* FUNCIONES PARA CREAR LOS CAMPOS EN LOS SELECT
- 
 
 export const selectCreation = (currenciesSupportedResponse, select) => { 
     currenciesSupportedResponse.forEach((currency) => { 
@@ -10,5 +9,6 @@ export const selectCreation = (currenciesSupportedResponse, select) => {
         option.textContent = currency.name;
     });
 };
+
 
 

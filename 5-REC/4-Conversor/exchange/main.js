@@ -25,14 +25,28 @@ const buttonTag = document.createElement('button');
 const spanTagResult = document.createElement("span"); 
 
 //FLAGS DIV CONTAINER
+const divFlagsContainerUp = document.createElement('div');
+divFlagsContainerUp.classList = 'div_flags_container';
+const divFlagsContainerDown = document.createElement('div');
+divFlagsContainerDown.classList = 'div_flags_container';
+
+//FLAGS IMG AND SPANS
 const containerFlagsUp = document.createElement('div')
 const containerFlagsDown = document.createElement('div')
+const spanFlagsUp = document.createElement('span');
+    spanFlagsUp.innerHTML = 'Source Countries:';
+const spanFlagsDown = document.createElement('span');
+    spanFlagsDown.innerHTML = 'Target Countries:';
 
 //APPENCHILDS
 divContainer.appendChild(divSelectContainer);
 divSelectContainer.appendChild(selectTagUp);
 divSelectContainer.appendChild(selectTagDown);
 divContainer.appendChild(buttonTag);
+body.appendChild(divFlagsContainerUp);
+body.appendChild(divFlagsContainerDown);
+divFlagsContainerUp.appendChild(spanFlagsUp);
+divFlagsContainerDown.appendChild(spanFlagsDown);
 
 
 //*INSTANCIA API
@@ -112,8 +126,8 @@ buttonTag.addEventListener('click', async () => {
     //BANDERAS
     const getFlagsBase = await getFlags(containerFlagsUp, baseCountries);
     const getFlagsTarget = await getFlags(containerFlagsDown, targetCountries);
-    body.appendChild(getFlagsBase);
-    body.appendChild(getFlagsTarget);
+    divFlagsContainerUp.appendChild(getFlagsBase);
+    divFlagsContainerDown.appendChild(getFlagsTarget);
 });
 
 //* INICIALIZACIÓN INIT
